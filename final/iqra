@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <title>Pixel Art House (JS)</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0e0e0;
+        }
+
+        .canvas {
+            width: 600px;
+            height: 400px;
+            background-color: #87CEEB;
+            position: relative;
+            overflow: hidden;
+            border: 8px solid #333;
+        }
+
+        .sun {
+            width: 80px;
+            height: 80px;
+            background-color: #FFD700;
+            border-radius: 50%;
+            position: absolute;
+            top: 40px;
+            left: 60px;
+        }
+
+        .grass {
+            width: 100%;
+            height: 120px;
+            background-color: #2D5A27;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .house {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .roof {
+            width: 0;
+            height: 0;
+            border-left: 90px solid transparent;
+            border-right: 90px solid transparent;
+            border-bottom: 80px solid #B22222;
+        }
+
+        .walls {
+            width: 180px;
+            height: 130px;
+            background-color: #D22B2B;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            padding-top: 25px;
+        }
+
+        .window {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        .door {
+            width: 45px;
+            height: 65px;
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // Canvas
+    const canvas = document.createElement("div");
+    canvas.className = "canvas";
+    document.body.appendChild(canvas);
+
+    // Sun
+    const sun = document.createElement("div");
+    sun.className = "sun";
+    canvas.appendChild(sun);
+
+    // Grass
+    const grass = document.createElement("div");
+    grass.className = "grass";
+    canvas.appendChild(grass);
+
+    // House
+    const house = document.createElement("div");
+    house.className = "house";
+    canvas.appendChild(house);
+
+    // Roof
+    const roof = document.createElement("div");
+    roof.className = "roof";
+    house.appendChild(roof);
+
+    // Walls
+    const walls = document.createElement("div");
+    walls.className = "walls";
+    house.appendChild(walls);
+
+    // Windows
+    const window1 = document.createElement("div");
+    window1.className = "window";
+
+    const window2 = document.createElement("div");
+    window2.className = "window";
+
+    // Door
+    const door = document.createElement("div");
+    door.className = "door";
+
+    // Append inside walls
+    walls.appendChild(window1);
+    walls.appendChild(door);
+    walls.appendChild(window2);
+</script>
+
+</body>
